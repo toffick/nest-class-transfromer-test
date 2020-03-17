@@ -11,7 +11,7 @@ export class AppController {
 
 
   /**
-   * Тут получили полный объект, т.к. возвращали UserEntity
+   * Тут получили объект UserEntity без поля id, т.к. оно в Exclude
    * Response
    * {
       "email": "email",
@@ -26,7 +26,7 @@ export class AppController {
 
   /**
    * Response
-   * Тут получили полный модифицированный объект, т.к. возвращали UserEntity
+   * Тут получили полный модифицированный объект, т.к. возвращали UserDto
    *
    *  {
         "email": "email",
