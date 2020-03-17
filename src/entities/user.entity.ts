@@ -13,7 +13,7 @@ import { Type, plainToClass, Exclude, Expose, } from "class-transformer";
 @Entity({ name: 'user' })
 export class UserEntity {
 
-    // при респонсе этого объекта все поля возвращаются
+    @Exclude() // убрали это поле из класса entity
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -27,7 +27,7 @@ export class UserEntity {
     @JoinColumn()
     comments: CommentEntity[]
 
-    constructor(partial: Partial<UserEntity>){
+    constructor(partial: Partial<UserEntity>) {
         Object.assign(this, plainToClass(UserEntity, partial))
     }
 
@@ -36,7 +36,7 @@ export class UserEntity {
 // наследуем от UserEntity
 export class UserDto extends UserEntity {
 
-   
+
     // скрываем поле пароля
     @Exclude()
     passwordHash: string;

@@ -14,7 +14,6 @@ export class AppController {
    * Тут получили полный объект, т.к. возвращали UserEntity
    * Response
    * {
-      "id": 1,
       "email": "email",
       "passwordHash": "123edawesdfvwe"
      }
@@ -30,7 +29,6 @@ export class AppController {
    * Тут получили полный модифицированный объект, т.к. возвращали UserEntity
    *
    *  {
-        "id": 1,
         "email": "email",
         "comments": [
             {
